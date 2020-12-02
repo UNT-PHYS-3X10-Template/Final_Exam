@@ -145,11 +145,12 @@ def init_visualization(cell,positions):
     """
     Function to setup the VPython visualization of the system
     """
-    vp.scene.caption = """Right button drag or Ctrl-drag to rotate "camera" to view scene.
-    To zoom, drag with middle button or Alt/Option depressed, or use scroll wheel.
-    On a two-button mouse, middle is left + right.
-    Shift-drag to pan left/right and up/down.
-    Touch screen: pinch/extend to zoom, swipe or two-finger rotate."""
+    vp.scene.caption = """
+Right button drag or Ctrl-drag to rotate "camera" to view scene.
+To zoom, drag with middle button or Alt/Option depressed, or use scroll wheel.
+On a two-button mouse, middle is left + right.
+Shift-drag to pan left/right and up/down.
+Touch screen: pinch/extend to zoom, swipe or two-finger rotate."""
     ndim = cell.size
     local_cell = np.zeros(3)
     thk = 0.3
@@ -229,6 +230,7 @@ utot,forces=calc_forces(positions,flj,ulj)
 #
 # During the simulation we will keep track of the following quantities
 #
+times =[0.]
 potential=[utot] # The total potential energy of the system
 kinetic=[calc_kinetic(masses,velocities)] # The total kinetic energy of the system
 #
@@ -237,6 +239,7 @@ kinetic=[calc_kinetic(masses,velocities)] # The total kinetic energy of the syst
 time=0.
 dt=50 # Time step used for the numerical integration (in atomic units) TASK 2: This value needs to be changed
 total_time=40000 # Total time simulated (in atomic units)
+stride=100 # Save information at every stride iterations
 while time<total_time :
 #    vp.rate(1000)
     time+=dt # Take one step in time
@@ -248,13 +251,14 @@ while time<total_time :
     #
     # Store the current values of the tracked quantities
     #
-    potential.append(utot)
-    kinetic.append(calc_kinetic(masses,velocities))
+    if int(time/dt)%stride == 0 : 
+        times.append(time)
+        potential.append(utot)
+        kinetic.append(calc_kinetic(masses,velocities))
 #
 # Alternative plots of the two components of the mechanical energy of the system
 #
 total=[potential[i]+kinetic[i] for i in range(len(potential))]
-times=np.arange(0.,time+dt,dt)
 #
 # Plot the energies of the system to check the stability of the dynamics (TASK 2)
 #
