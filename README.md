@@ -5,13 +5,13 @@ In this project you will use a classical molecular dynamics program to study the
 The project is organized into five tasks, but the core of the program is already implemented.  
 
 TASKS:
-1. Initialize the size of the box, the number of particles, and their initial velocities
+1. Initialize the size of the box, the number of particles, and their initial velocities. Note that velocities can be initialized 
+   at random, but the velocity of the center of mass of the system needs to be equal to zero.
 2. Optimize the timestep of the simuation so that the total energy of the system is conserved
 3. Collect the speed and kinetic energy of the particles in time and perform a statistical analysis of the data:
    - What is the mean kinetic energy of each particle?
    - Are there significant differences between different particles? 
    - Plot the frequency distribution of the speed of the particles and compare it to the Maxwell-Boltzmann distribution function.
- 
 4. Collect the total kinetic energy of the system and perform a statistical analysis of the data:
    - What is the temperature of the system? Report your estimate with a 99% confidence interval.
    - Plot the frequency distribution of the total kinetic energy of the system. What distribution function do you expect?
