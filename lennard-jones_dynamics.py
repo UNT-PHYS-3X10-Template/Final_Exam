@@ -235,7 +235,7 @@ kinetic=[calc_kinetic(masses,velocities)] # The total kinetic energy of the syst
 # Start the loop for the time integration
 #
 time=0.
-dt=50 # Time step used for the numerical integration (in atomic units)
+dt=50 # Time step used for the numerical integration (in atomic units) TASK 2: This value needs to be changed
 total_time=40000 # Total time simulated (in atomic units)
 while time<total_time :
 #    vp.rate(1000)
@@ -255,8 +255,14 @@ while time<total_time :
 #
 total=[potential[i]+kinetic[i] for i in range(len(potential))]
 times=np.arange(0.,time+dt,dt)
-plt.subplot(2,1,1)
-plt.plot(times,potential)
-plt.plot(times,kinetic)
-plt.subplot(2,1,2)
-plt.plot(times,total)
+#
+# Plot the energies of the system to check the stability of the dynamics (TASK 2)
+#
+
+#
+# TASK 3: Analyze the individual kinetic energy of the particles
+#
+
+#
+# TASK 4: Analyze the total kinetic energy of the system
+#
