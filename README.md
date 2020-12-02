@@ -8,12 +8,13 @@ TASKS:
 1. Initialize the size of the box, the number of particles, and their initial velocities
 2. Optimize the timestep of the simuation so that the total energy of the system is conserved
 3. Collect the speed and kinetic energy of the particles in time and perform a statistical analysis of the data:
-   a. What is the mean kinetic energy of each particle?
-   b. Are there significant differences between different particles? 
-   c. Plot the frequency distribution of the speed of the particles and compare it to the Maxwell-Boltzmann distribution function.
+   - What is the mean kinetic energy of each particle?
+   - Are there significant differences between different particles? 
+   - Plot the frequency distribution of the speed of the particles and compare it to the Maxwell-Boltzmann distribution function.
+ 
 4. Collect the total kinetic energy of the system and perform a statistical analysis of the data:
-   a. What is the temperature of the system? Report your estimate with a 99% confidence interval.
-   b. Plot the frequency distribution of the total kinetic energy of the system. What distribution function do you expect?
+   - What is the temperature of the system? Report your estimate with a 99% confidence interval.
+   - Plot the frequency distribution of the total kinetic energy of the system. What distribution function do you expect?
 
 OPTIONAL TASKS:
 1. Repeat the analysis above for a larger number of particles. How are the results different? 
