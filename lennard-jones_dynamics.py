@@ -214,8 +214,8 @@ mass=73000. # (in atomic units)
 # Define basic setup of the simulation: number of objects, masses, initial positions
 # initial velocities, timestep.
 #
-cell=np.array([10.0, 10.])
-nobjects=8
+cell=np.array([20.0, 20., 20.]) # TASK 1: initialize the box (should probably be a 3D box, but you can play with 1D and 2D)
+nobjects=8 # TASK 1: select the number of particles
 masses=mass*np.ones(nobjects) # Masses of the objects (in atomic units)
 positions=init_positions(nobjects,cell) # Positions of the objects (in atomic units)
 velocities=init_velocities(nobjects,cell,0.005)# Initial velocities of the two objects (in atomic units)
